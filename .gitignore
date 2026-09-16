@@ -1,0 +1,20 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Excluded Docs
+builders_roadmap.md
+golden_eval_notes.md
+implementation_plan.md
+# Data
+data/raw/twcs.csv
