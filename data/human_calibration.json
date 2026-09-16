@@ -1,0 +1,162 @@
+[
+    {
+        "tweet": "Hmm? @Apple what happened?",
+        "reply": "@handle We'd like to help you better understand what's going on. Can you please DM us with some details about what you're experiencing?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "I am massively disappointed with how bad my skin has become after continuing to wear my iwatch for a month. I clean my watch everyday and change the straps often but the rash gets progressively worse only when i continued to wear the iwatch @Apple please provide an explanation!",
+        "reply": "@handle We're here to help you resolve this issue. To better understand what's happening, please DM us and let us know your iWatch model and the country you're in.",
+        "human_helpfulness": 2,
+        "human_tone": 3,
+        "human_accuracy": 2,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@Apple PLEASE fix your maps app. it's been trying to take me the wrong way down one way streets and rerouting in the middle of driving when i didn't even make a wrong turn",
+        "reply": "@handle We'd like to help you resolve the issue with our Maps app. Can you please DM us with more details about the routes it's trying to take and where you're located?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@Apple iOS 18 is having major issues with Bluetooth connectivity. Please update",
+        "reply": "@handle We'd like to help with your Bluetooth connectivity issue. Can you please tell us more about the problem you're experiencing with iOS 18?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "apple why is it when I search for “Belfast, Northern Ireland” maps says it can't find it. So I search for the country and I can see Belfast is there. If I am looking at Northern Ireland and search for Belfast, it brings me back to my country and says “no”. This is broken.",
+        "reply": "@handle We'd like to help you with the Maps issue. Can you tell us which device and iOS version you're using?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 5
+    },
+    {
+        "tweet": "Dropped my Beats Pro (@AppleSupport) for the first time, now they're shocking me 😃",
+        "reply": "@handle We'd like to help get your Beats working as they should. Let's chat in DM!",
+        "human_helpfulness": 1,
+        "human_tone": 2,
+        "human_accuracy": 2,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@AppleSupport I’m trying to export an iMovie project (simple edits of a video shot 4K30 non-HDR on the same iP14Pro) to my laptop and this is what I get, no worky: (PS. Got over 300GB of space, battery is charged/hooked to power). Help?",
+        "reply": "@handle Let's troubleshoot the export issue. Can you please check the iMovie project settings to ensure you're exporting in a compatible format for your laptop? DM us for further assistance.",
+        "human_helpfulness": 4,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "I need help with Apple Watch purchase",
+        "reply": "@handle We'd like to help with your Apple Watch purchase. Can you DM us some more details about the issue you're having?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@Apple can somebody explain to me why yall keep trying to charge me a total of 50+ dollars with a bunch of random charges???? Cause I’m getting mad",
+        "reply": "@handle We'd like to help clarify the charges on your account. Can you please DM us your account information so we can look into this further?",
+        "human_helpfulness": 2,
+        "human_tone": 3,
+        "human_accuracy": 2,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "What do I do if my iPhone is inactive",
+        "reply": "@765161 We want to help. Please tell us the exact version of iOS 11 you have installed on your device. You'll see this in Settings > General > About.",
+        "human_helpfulness": 3,
+        "human_tone": 3,
+        "human_accuracy": 1,
+        "human_conciseness": 3
+    },
+    {
+        "tweet": "@AppleSupport Hello. How do I manually control the focus on the camera app? Whenever I try the built in tap to focus it focuses on dirt on the glass I’m shooting through.",
+        "reply": "@handle We'd be happy to help with your camera settings. Can you check which iOS version you're running and let us know?",
+        "human_helpfulness": 2,
+        "human_tone": 4,
+        "human_accuracy": 3,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@AppleSupport heyyyyy, I need some information regarding refund times please.",
+        "reply": "@handle We'd be happy to help with your refund question. Can you please provide us with some additional details about your refund, such as the order number or the item being refunded? DM us.",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 3,
+        "human_conciseness": 3
+    },
+    {
+        "tweet": "@Apple I’m facing this issue continuously if I disconnect any call it shows like this screen and in background this screen remains same I’m even Unable to close this tab. What’s issue ? @AppleSupport",
+        "reply": "@handle We'd be happy to help you troubleshoot this issue. Can you please tell us which iPhone and version of iOS you're using?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@Apple wtf are you charging me for",
+        "reply": "@handle Let's look into this further. Can you please DM us with your account information so we can assist you with your billing inquiry?",
+        "human_helpfulness": 2,
+        "human_tone": 3,
+        "human_accuracy": 2,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@AppleSupport how one can transfer photos and videos from iPhone to windows Laptop without spending any money on third party aap or software? And after getting it done photo’s and videos smoothly work on laptop…! Is it possible!!!",
+        "reply": "@handle We'd be happy to help you transfer photos and videos from your iPhone to your Windows laptop without any additional costs. Can you please DM us so we can provide you with the steps to do this?",
+        "human_helpfulness": 2,
+        "human_tone": 4,
+        "human_accuracy": 3,
+        "human_conciseness": 3
+    },
+    {
+        "tweet": "Hello i have purchased subscription yesterday payment debited but plan not activated",
+        "reply": "@handle We'd like to help you with your subscription issue. Can you please DM us with your Apple ID and the exact error message you're seeing?",
+        "human_helpfulness": 2,
+        "human_tone": 4,
+        "human_accuracy": 2,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "Dear @AppleSupport, I frequently encounter this error on the screen of my iPhone 15 Plus. Please help.",
+        "reply": "@handle We'd like to help with the error on your iPhone 15 Plus. Can you please tell us which iOS version is currently installed?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 4,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@AppleSupport Got my M2 MacBook Air a year and a half ago, never dropped it, kept well…  it randomly did this today when I turned it on? Won’t stop doing it 4-5 times before sending me into recovery mode??? What is going on?!",
+        "reply": "@handle We're here to help with your MacBook Air issue. Can you DM us so we can gather more information about this problem and work together to get it resolved?",
+        "human_helpfulness": 3,
+        "human_tone": 4,
+        "human_accuracy": 5,
+        "human_conciseness": 4
+    },
+    {
+        "tweet": "@AppleSupport for some reason I keep getting a notification to update or “verify” my payment info. I have money on my card. It’s doing the same thing for my PayPal. I need some help PLEASE. I don’t want to delete my account again because of this. This is the 2nd time.",
+        "reply": "@handle We'd like to help you resolve the issue with your payment info notifications. Can you please check the iOS version on your device via Settings > General > About and let us know in DM?",
+        "human_helpfulness": 2,
+        "human_tone": 4,
+        "human_accuracy": 2,
+        "human_conciseness": 3
+    },
+    {
+        "tweet": "@AppleSupport just curious why the weather is not working on my watch when it’s supposed to be mirroring my phone and it’s working on my phone. This just started yesterday I have rebooted both devices changed watch faces… any ideas? Everything is up-to-date.",
+        "reply": "@handle We'd like to help you troubleshoot the issue with your Apple Watch's weather app. Can you tell us if you've checked the watch's settings to ensure it's configured to mirror your iPhone's location services?",
+        "human_helpfulness": 4,
+        "human_tone": 4,
+        "human_accuracy": 5,
+        "human_conciseness": 3
+    }
+]

@@ -1,7 +1,6 @@
-from dotenv import load_dotenv
 import requests
 import os
-MODEL_NAME = "gemini-3.6-flash"
+from src.config import OLLAMA_MODEL
 TEMPERATURE = 0.2   
 
 
@@ -67,7 +66,7 @@ class ReplyGenerator:
         
         try:
             response = requests.post("http://localhost:11434/api/generate", json={
-                "model": "llama3.1:8b",
+                "model": OLLAMA_MODEL,
                 "prompt": prompt,
                 "stream": False,
                 "options": {"temperature": TEMPERATURE}

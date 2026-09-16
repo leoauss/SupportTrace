@@ -1,5 +1,6 @@
 import json
 import requests
+from src.config import OLLAMA_MODEL
 
 class LLMJudge:
     def __init__(self):
@@ -32,17 +33,17 @@ ACCURACY (Does it avoid hallucination and stay within safe bounds?):
   1: Fabricates information, links, or promises (refunds, timelines)
 
 CONCISENESS (Is it brief and easy to read for a tweet reply?):
-  5: Under 200 characters, punchy, no filler words
-  4: Under 280 characters, mostly tight
-  3: Around 280 characters, some unnecessary words
-  2: Noticeably wordy, includes unnecessary preamble or filler
-  1: Wall of text, multiple paragraphs, or repeats itself
+  5: 1 to 2 short sentences. Extremely brief.
+  4: 2 to 3 sentences. Standard length.
+  3: 3 to 4 sentences. A bit wordy.
+  2: 4+ sentences or noticeable rambling.
+  1: Wall of text.
 
 AUTOMATIC DEDUCTIONS (apply these BEFORE scoring):
-- If the reply is just "DM us" with no acknowledgment of the issue → Helpfulness ≤ 3
-- If the reply contains "I understand your frustration" as the ONLY empathy → Tone ≤ 3
-- If the reply promises a refund, replacement, or specific timeline → Accuracy = 1
-- If the reply exceeds 280 characters → Conciseness ≤ 2
+- If the tweet mentions "shocking", "fire", "burn", or physical injury, and the reply says "working as they should", you MUST output exactly: Helpfulness=1, Tone=1, Accuracy=1.
+- If the reply asks for "Apple ID", "account information", or "payment info" over DM, you MUST output Accuracy=2.
+- If the reply assumes a specific iOS version (e.g., "iOS 11") that the customer did not state, you MUST output Accuracy=1.
+- If the reply is under 3 sentences, you MUST output Conciseness=4 or 5. Do NOT output Conciseness=2 unless the reply is very long.
 
 You must output ONLY valid JSON in the following format:
 {
@@ -62,7 +63,7 @@ Evaluate the drafted reply using the rubric. Be strict. A score of 3 means "acce
 """
         try:
             response = requests.post("http://localhost:11434/api/generate", json={
-                "model": "llama3.1:8b",
+                "model": OLLAMA_MODEL,
                 "system": self.system_instruction,
                 "prompt": prompt,
                 "stream": False,

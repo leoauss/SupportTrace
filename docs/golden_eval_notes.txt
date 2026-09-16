@@ -1,0 +1,60 @@
+Golden Evaluation Set: Methodology & Labelling Rules
+
+1. Overview
+This document outlines the methodology for creating the Golden Evaluation Set for the AppleSupport AI Agent. This dataset acts as our ground truth for evaluating the pipeline's classification accuracy, escalation routing, and overall safety.
+
+2. Sampling Methodology (N=200)
+To ensure our evaluation is statistically significant and stress-tests the agent, I pulled a stratified sample of 200 tweets.
+
+Distribution:
+- Authentic Samples (100 tweets): Real customer tweets collected from Twitter that received replies from @AppleSupport, manually selected to cover diverse intents, edge cases, and linguistic variations.
+Synthetic Samples (100 tweets): Generated using Claude Sonnet 5, conditioned on the Kaggle Customer Support dataset and the 100 authentic @AppleSupport tweets to generate realistic intent variations and challenging cases.
+- Edge Cases: Hand-picked or artificially injected edge cases to test boundary limits. Includes:
+  * Multi-intent queries (e.g., "Screen is cracked and I want a refund").
+  * Ultra-short queries ("help", "???").
+  * Emoji-heavy or non-standard syntax.
+- Adversarial / High-Risk: Critical safety tests that MUST trigger the EscalationDecider. Includes:
+  * Physical harm/safety hazards ("burned my hand", "exploded").
+  * Profanity and abuse.
+  * Legal threats.
+
+3. Intent Labelling Rules
+When manually assigning the expected_intent, we adhered strictly to the following taxonomy rules:
+
+* device_issue: Only use if the problem is strictly hardware/physical (cracked screen, physical battery swelling, broken charging port).
+* software_update: Only use if the user explicitly blames an iOS/macOS update for their current problem (e.g., "Ever since iOS 17...").
+* software_issue: Use for general bugs, glitches, or UI errors where an update is NOT explicitly blamed.
+* performance: Use for battery drain, slow devices, or overheating. Crucial: If they say "battery drain since update", it goes to software_update as primary, performance as secondary.
+* app_crash: Use only if a specific application is force-closing or freezing.
+* account_access: Use for Apple ID, 2FA, or login issues.
+* icloud_storage: Use for sync issues, lost photos, or full storage. If a user asks "how do I upgrade iCloud", use this, not how_to.
+* conduct_complaint: Use for complaints about staff behavior, customer service rudeness, or discrimination in-store or online.
+* content_dispute: Use for fraudulent sales, licensing disputes, or disputes over authorized repair center claims (e.g. unrecognized charges).
+* billing_subscription: Use for standard billing, pricing, or subscription queries (e.g. "how do I switch my family plan?").
+* feature_request: Use for suggestions for new features, design tweaks, or product roadmap requests, NOT fault reports.
+* how_to: Use ONLY for general Apple ecosystem instructions. If the query is "how to" do something related to a specific category (like billing, iCloud, or updates), use that specific category instead!
+* other: Use for off-topic questions ("what's the capital of France"), jokes, trolls, or general questions like "can I talk to a human". Do not use how_to for these.
+* purchase_delivery: Use for order tracking, stock checks (e.g., "is the MacBook in stock?"), or delivery issues.
+* data_transfer: Use for transferring data between devices (e.g. "how to transfer photos to PC").
+* connectivity: Use for Wi-Fi, Bluetooth, cellular, or general network issues (e.g. messages not delivering).
+
+4. Resolving Ambiguity
+During the manual labelling process, several ambiguous cases arose. Here is how they were resolved to maintain consistency in the Golden Set:
+
+1. "My phone won't turn on"
+   - Resolution: Marked as device_issue. While it could be software, a totally dead device is treated as hardware for triage purposes.
+2. "Fix your terrible map app"
+   - Resolution: Marked as other (Primary) and software_issue (Secondary). It is primarily a complaint/feedback rather than a request for support.
+3. Multi-intent: "My screen is cracked and how do I cancel Apple Music?"
+   - Resolution: The intent with the highest physical/financial risk takes the primary_intent. Here, device_issue is primary, billing_subscription is secondary.
+
+5. Escalation Rules (expected_escalation)
+We labeled expected_escalation: True if the tweet met ANY of the following criteria:
+Safety Hazard: Mentions of fire, burning, explosions, car crashes, or physical injury.
+Severe Overheating: Reports of excessive or abnormal device heating that may indicate a potential safety or hardware issue.
+Abuse: Severe profanity directed at the brand/agent.
+High Financial Risk: Threats of lawsuits or claims involving significant financial loss.
+
+Apple's official support documentation was referenced to define and validate the safety-related escalation rules.
+
+All other standard support requests were labeled False (safe for the AI to auto-reply).

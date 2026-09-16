@@ -5,6 +5,7 @@ import os
 import random
 import time
 import requests
+from src.config import OLLAMA_MODEL
 from dataclasses import dataclass, field
 
 from src.intent.taxonomy import (
@@ -149,7 +150,7 @@ class IntentClassifier:
 
         try:
             response = requests.post("http://localhost:11434/api/generate", json={
-                "model": "llama3.1:8b",
+                "model": OLLAMA_MODEL,
                 "prompt": prompt,
                 "stream": False,
                 "format": "json",

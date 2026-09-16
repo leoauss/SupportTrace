@@ -37,11 +37,25 @@ def compute_calibration(human_scores_file: str):
         ])
         
         all_llm_scores.extend([
-            llm_scores["helpfulness"],
-            llm_scores["tone"],
-            llm_scores["accuracy"],
-            llm_scores["conciseness"]
+            llm_scores.get("helpfulness", 0),
+            llm_scores.get("tone", 0),
+            llm_scores.get("accuracy", 0),
+            llm_scores.get("conciseness", 0)
         ])
+        
+        # Print discrepancies
+        discrepancy = False
+        metrics = ["helpfulness", "tone", "accuracy", "conciseness"]
+        for m in metrics:
+            h = item[f"human_{m}"]
+            l = llm_scores.get(m, 0)
+            if abs(h - l) >= 2:
+                if not discrepancy:
+                    print(f"\n--- Discrepancy on Example {i+1} ---")
+                    print(f"Reply: {item['reply']}")
+                    discrepancy = True
+                print(f"  {m.capitalize()}: Human={h} | LLM={l}")
+
         
     pearson_corr, p_value = stats.pearsonr(all_human_scores, all_llm_scores)
     
