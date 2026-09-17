@@ -166,7 +166,7 @@ class IntentClassifier:
         except json.JSONDecodeError as e:
             return _fallback_result(f"json_error: {e}", raw=last_raw, confidence=0.1)
 
-    def classify_batch(self, texts: list[str], delay: float = 12.5) -> list[IntentResult]:
+    def classify_batch(self, texts: list[str], delay: float = 0.0) -> list[IntentResult]:
         """Classify a list of tweets with a delay between calls (rate limiting)."""
         results = []
         for i, text in enumerate(texts):
@@ -193,10 +193,6 @@ if __name__ == "__main__":
 
     print("\n=== Intent Classification Test ===\n")
     for i, tweet in enumerate(test_tweets):
-        if i > 0:
-            print("  [Waiting 12s for rate limit...]")
-            time.sleep(12.5)
-
         result = classifier.classify(tweet)
         secondary = ", ".join(result.secondary_intents) or "none"
         print(f"Tweet:     {tweet[:80]}...")
